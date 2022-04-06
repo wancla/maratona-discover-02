@@ -15,7 +15,11 @@ server.use(express.static("public"))
 // usar o req.body
 server.use(express.urlencoded({ extended: true }))
 
+const port = process.env.PORT || 3000;
+
 // routes
 server.use(routes)
 
-server.listen(3000, () => console.log('rodando'))
+server.listen(port, ()=>{
+    console.info("Aplicação rodando em ", port)
+})
